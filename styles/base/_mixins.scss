@@ -1,0 +1,14 @@
+
+@mixin gradient($color ){
+    background: $color;
+}
+@mixin box($w, $h,$color){
+    width: $w;  
+    height: $h;
+    color: $color;
+   }
+@mixin block($w, $h,$color){
+    width: $w;  
+    height: $h;
+    background-color: $color;
+   }

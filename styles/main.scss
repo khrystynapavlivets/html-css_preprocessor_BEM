@@ -1,0 +1,136 @@
+@import './base/mixins';
+@import './base/variables';
+@import './base/reset.scss';
+
+body {
+    background-color: $color;
+}
+
+.box {
+    @include block(1440px, 250px, $block-color);
+    margin-top: 150px;
+    display: flex;
+
+    &-item {
+        width: 95px;
+        display: flex;
+        transition: 1s width;
+
+        &:hover {
+            width: 470px;
+        }
+
+        &-text {
+            display: block;
+            background-color: $text-color;
+            overflow: hidden;
+
+            &-header,
+            &-p {
+                display: block;
+                width: 350px;
+                margin: 0px 15px;
+            }
+
+            &-header {
+                margin-bottom: 10px;
+                font-size: 45px;
+                margin-top: 70px;
+            }
+        }
+
+        .box-item-forIcon:hover .box-text {
+            display: block;
+            width: 400px;
+        }
+
+        &-forIcon {
+            display: block;
+            cursor: pointer;
+
+            &-uil {
+                @include box(95px, 250px, $text-color);
+                font-size: 57px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            &::before {
+                content: "\ec0c";
+                font-family: unicons-line;
+                font-size: 45px;
+                @extend .box-item-forIcon-uil;
+                background-color: $box-color;
+                border-right: $border;
+                overflow: hidden;
+                position: absolute;
+                transition: 0.4s width;
+            }
+
+            &:hover {
+                &::before {
+                    width: 0px;
+                }
+            }
+        }
+
+        &-forIcon-1 {
+            @include gradient(linear-gradient(to bottom, #6dd5ed, #2193b0));
+
+            &::before {
+                content: "\ec0c";
+            }
+        }
+
+        &-forIcon-2 {
+            @include gradient(linear-gradient(to bottom, #00B4DB, #0083B0));
+
+            &::before {
+                content: "\ec5d";
+            }
+        }
+
+        &-forIcon-3 {
+            @include gradient(linear-gradient(to bottom, #93F9B9, #1D976C));
+
+            &::before {
+                content: "\ec03";
+
+            }
+        }
+
+        &-forIcon-4 {
+            @include gradient(linear-gradient(to bottom, #F15F79, #B24592));
+
+            &::before {
+                content: "\ec09";
+            }
+        }
+
+        &-forIcon-5 {
+            @include gradient(linear-gradient(to bottom, #1488cc, #2b32b2));
+
+            &::before {
+                content: "\ec06";
+            }
+        }
+
+        &-forIcon-6 {
+            @include gradient(linear-gradient(to bottom, #acbb78, #799f0c));
+
+            &::before {
+                content: "\ec0e";
+            }
+        }
+
+        &-forIcon-7 {
+            @include gradient(linear-gradient(to bottom, #e35d5b, #e53935));
+
+            &::before {
+                content: "\e9df";
+            }
+        }
+    }
+}
